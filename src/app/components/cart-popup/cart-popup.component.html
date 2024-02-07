@@ -1,0 +1,17 @@
+<div class="cart-popup" *ngIf="cartVisible">
+  <button class="close-button" (click)="closeCart()">
+    <img src="assets/close.svg" alt="Close" />
+  </button>
+  <div *ngFor="let product of productsInCart" class="product">
+    <div class="product-info">
+      <p>{{ product.name }}</p>
+      <p>{{ getCurrencySymbol(product.currency) }}{{ product.price }}</p>
+    </div>
+    <img
+      [src]="product.image.src"
+      [alt]="product.image.alt"
+      class="product-image"
+    />
+  </div>
+  <button class="clear-button" (click)="clearCart()">CLEAR</button>
+</div>

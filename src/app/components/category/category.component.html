@@ -1,0 +1,10 @@
+<div class="categories">
+  <h2>Category</h2>
+  <div class="checkbox" *ngFor="let category of categoryList">
+    <mat-checkbox (change)="onCategoryChange(category, $event.checked)"
+      ><span class="category-text">{{
+        category.charAt(0).toUpperCase() + category.slice(1)
+      }}</span></mat-checkbox
+    >
+  </div>
+</div>

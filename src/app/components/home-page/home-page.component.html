@@ -1,0 +1,10 @@
+<app-header></app-header>
+<app-featured-product
+  *ngIf="featuredProduct"
+  [product]="featuredProduct"
+></app-featured-product>
+<app-products
+  [products]="products"
+  [totalPages]="totalPages"
+  [categories]="categories"
+></app-products>

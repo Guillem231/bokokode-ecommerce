@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+$color-black: #000000
+$color-white: #ffffff
+$color-gray: #808080
+$shadow: 0.25rem
+$border-radius-1: .25rem
+
+$font-family: 'Archivo', sans-serif
+$animation: 200ms
+
+html, body
+    height: 100%
+
+body *
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: $color-white
+    color: $color-black
+    font-family: $font-family
+    max-width: 1440px
+    margin: 0 auto !important
+    float: none !important
+
+.box
+    border: $border-radius-1 solid $color-black
+    box-shadow: $shadow $shadow rgba($color-gray, 0.5)
+    animation: fade-in $animation
+
+@keyframes fade-in
+    from
+        opacity: 0
+    to
+        opacity: 1

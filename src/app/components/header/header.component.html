@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="../../../assets/company_logo.svg" alt="Logo de la empresa" />
+    </div>
+
+    <div class="cart">
+      <div class="cart-count" *ngIf="productsInCart.length > 0">
+        {{ productsInCart.length }}
+      </div>
+      <app-cart-popup></app-cart-popup>
+      <img
+        src="../../../assets/cart.svg"
+        alt="Icono de carrito de compras"
+        (click)="openCart()"
+      />
+    </div>
+  </div>
+</div>

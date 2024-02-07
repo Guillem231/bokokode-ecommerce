@@ -1,0 +1,14 @@
+<div class="list-wrapper">
+  <div class="list-products">
+    <ng-container *ngFor="let product of products">
+      <app-card-product *ngIf="!product.featured" [product]="product" />
+    </ng-container>
+  </div>
+  <div class="list-products-pagination">
+    <app-pagination
+      [totalPages]="totalPages"
+      [currentPage]="currentPage"
+      (pageChange)="changePage($event)"
+    ></app-pagination>
+  </div>
+</div>

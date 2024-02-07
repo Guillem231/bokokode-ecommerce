@@ -1,0 +1,9 @@
+<div class="sort-container">
+  <img src="../../../assets/sort_arrows.svg" />
+  <label for="sortSelect">Sort By </label>
+  <select id="sortSelect" (change)="onSortChange($event)">
+    <option *ngFor="let option of sortOptions" [value]="option.value | json">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,38 @@
+<div class="products">
+  <div class="products-header">
+    <h3>Photography / <span>Premium Photos</span></h3>
+    <button class="category-button" (click)="toggleCategories()">
+      <img src="assets/filter.svg" alt="Filters" />
+    </button>
+    <div class="category-mobile" [class.show]="showCategories">
+      <button class="close-button" (click)="toggleCategories()">
+        <img src="assets/close.svg" alt="Close" />
+      </button>
+      <app-category
+        [categoryList]="categories"
+        (categoryChange)="filterProducts($event)"
+      ></app-category>
+    </div>
+
+    <app-sort-by
+      class="sort-by"
+      (sortChange)="sortProducts($event)"
+    ></app-sort-by>
+  </div>
+  <div class="products-body">
+    <div class="category">
+      <app-category
+        [categoryList]="categories"
+        (categoryChange)="filterProducts($event)"
+      ></app-category>
+    </div>
+    <div class="list-products">
+      <app-list-products
+        [products]="products"
+        [totalPages]="totalPages"
+        [selectedCategories]="selectedCategories"
+        [selectedSort]="selectedSort"
+      ></app-list-products>
+    </div>
+  </div>
+</div>

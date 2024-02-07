@@ -1,0 +1,16 @@
+<div class="product" *ngIf="product">
+  <div class="product-image">
+    <img [src]="product.image.src" [alt]="product.image.alt" />
+    <div class="overlay">
+      <app-cart-button [product]="product"></app-cart-button>
+    </div>
+    <div class="bestseller" *ngIf="product.bestseller">Best Seller</div>
+  </div>
+  <div class="product-details">
+    <p class="category">{{ product.category }}</p>
+    <p class="name">{{ product.name }}</p>
+    <p class="price">
+      {{ getCurrencySymbol(product.currency) }}{{ product.price }}
+    </p>
+  </div>
+</div>

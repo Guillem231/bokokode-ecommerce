@@ -1,0 +1,29 @@
+<div class="product" *ngIf="product">
+  <div class="product-header">
+    <h3>{{ product.name }}</h3>
+    <app-cart-button [product]="product"></app-cart-button>
+  </div>
+  <div class="product-img">
+    <img [src]="product.image.src" [alt]="product.image.alt" />
+    <div>Photo of the day</div>
+  </div>
+  <div class="product-content">
+    <div class="product-content-desc">
+      <h4>About {{ product.name }}</h4>
+      <h4>{{ product.category }}</h4>
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="product-content-interests">
+      <div class="title-container">
+        <h4>People also buy</h4>
+      </div>
+      <div class="cards-container">
+        <app-card-product
+          *ngFor="let product of product.people_also_buy"
+          [product]="product"
+        ></app-card-product>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+</div>

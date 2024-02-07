@@ -1,0 +1,77 @@
+.products
+    width: 100%
+    padding: 6rem 4rem 
+
+    .products-header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+
+        h3
+            font-size: 32px
+            font-weight: 700
+            text-align: left
+
+            span
+                color: gray
+                font-weight: 400
+
+        .category-button
+            display: none
+            border: none
+            background: none
+            cursor: pointer
+
+        .category-mobile
+            display: none
+            position: fixed
+            bottom: 0
+            width: 100%
+            height: 50vh
+            overflow: auto
+            background: white
+            z-index: 1000
+            padding: 1rem
+
+            &.show
+                display: block
+
+            .close-button
+                position: absolute
+                top: 1rem
+                right: 2rem
+                border: none
+                background: none
+                cursor: pointer
+
+    .products-body
+        display: flex
+        justify-content: space-between
+        margin-top: 100px
+
+        .category
+            flex: 1
+
+        .list-products
+            flex: 3
+
+    @media only screen and (max-width: 768px)
+        padding: 3rem 1rem 
+
+        .products-header
+            flex-direction: row 
+            align-items: center 
+
+            h3
+                font-size: 20px
+
+            .category-button
+                display: inline-block
+
+        .sort-by
+            display: none
+
+        .products-body
+            .category
+                display: none
